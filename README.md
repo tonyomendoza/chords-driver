@@ -3,6 +3,8 @@
 CHORDS: A Linux kernel module for generating text of musical chord spellings based on given parameters.
 This was made as a fun sample project for students to borrow as an example.
 
+!["...These Hills Sing" - Pacha](readme-images/header.gif)
+
 > [!WARNING]  
 > Not supporting flats (♭), double flats (♭♭), or double sharps (♯♯) at this time... sorry!
 
@@ -167,7 +169,9 @@ The preceding steps set up triad chords. Throw these at your chords for more fla
 > {c} represents any character as long as it is  Refer to the top of section [Notes](#section-syntax-notes) for the list of note symbols.
 
 > [!NOTE]  
-> {d} represents a single or two-digit number. This means the chord name contain *A9* or *A13*. Sure you can technically create a ***EmA99*** chord in this system, but WWBJSD? (That is Johann Sebastian Bach).
+> {d} represents a single or two-digit number. This means the chord name contain *A9* or *A13*. Sure you can technically create a ***EmA99*** chord in this system, but WWBJSD?
+
+!["Without my morning coffee I'm just like a dried up piece of roast goat!" - Johann Sebastian Bach (quote from AZQuotes)](readme-images/bach-0.jpg)
 
 > [!CAUTION]  
 >  ORDER MATTERS. Rearranging these will alter the expected output. Refer to the top of section [Input Chord Name syntax](#section-syntax) for the syntax.
