@@ -18,7 +18,7 @@
 int main() 
 {
     int fd;
-    char *s = "Em7S2S4A11/B"; // E Minor 7th Sus2 Sus4 Add11 / B...
+    char *s = "Em7S2A11/B"; // E Minor 7th Sus2 Add11 / B...
 
     // Open
     fd = open("/dev/chords210", O_RDWR);

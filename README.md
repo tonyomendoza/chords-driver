@@ -1,7 +1,7 @@
 # CHORDS-driver :musical_keyboard:
 
-CHORDS: A Linux kernel module for generating text of musical chord spellings based on given parameters.
-This was made as a fun sample project for students to borrow as an example.
+*CHORDS*: A Linux kernel module for generating text of musical chord spellings based on given parameters.
+This was made as a fun sample project for students to borrow as an example. With that said, this is also my own learning experience with music theory. Bare with me :smiley:
 
 !["...These Hills Sing" - Pacha](readme-images/header.gif)
 
@@ -46,12 +46,12 @@ gcc $< -o $@
 
 ## Usage :gear:
 
-### Initialize
+### Initialize :rocket:
 Initialize file descriptor and string that contains chord.
 By default, CHORDS supports an input string of ***16 bytes***.
 ```code
 int fd;
-char *s = "Em7S2S4A11/B";
+char *s = "Em7S2A11/B";
 ```
 
 ### Open :open_file_folder:
@@ -93,15 +93,15 @@ return 0;
 
 In the example, we write:
 ```code
-char *s = "Em7S2S4A11/B";
+char *s = "Em7S2A11/B";
 ```
 This string represents the chord E minor 7 sus 2 sus 4 add 11 / B
 The goal of this device driver is to allow anyone to simply type their chord name in the application to recieve a string value.
 The syntax to create your own chords is as follows:
 
-> ***Note***&rarr;***Scale***&rarr;***7th***&rarr;***Sus2***&rarr;***Sus4***&rarr;***Add{n}***&rarr;***/{c}***
+> ***Note***&rarr;***Scale***&rarr;***7th***&rarr;***Sus{2/4}***&rarr;***Add{n}***&rarr;***/{c}***
 
-In that example, *d = one or two-digit int* and *c = Note char*
+In that example, *d = one or two-digit int* and *c = Note char*. *2/4* means choose either 2 OR 4.
 
 Below is how you would convert a human readable chord into a CHORDS-readable chord.
 | Input  | SYNTAX SYMBOLS |
@@ -109,15 +109,14 @@ Below is how you would convert a human readable chord into a CHORDS-readable cho
 | ***Note***  | (See the next table)  |
 | Scale  | (omit), M, m, +, O, 0  |
 | 7th Note  | 7  |
-| Suspended 2nd Note  | S2  |
-| Suspended 4th Note  | S4  |
+| Suspended 2nd/4th Note  | S{2/4}  |
 | Added or Extended Note | A{d}|
 | Slash or Inversion | /{c}
 
 > [!IMPORTANT]  
 >  The only required symbol is the ***Note*** symbol. Every other symbol may be added or removed from your chord as needed.
 
-###<a name="section-syntax-notes"></a> Notes :musical_note:
+### <a name="section-syntax-notes"></a> Notes :musical_note:
 There are 12 possible note symbols.
 This app does not support flats (♭), double flats (♭♭), or double sharps (♯♯) at this time. Consider converting to sharps (♯) instead.
 
@@ -161,7 +160,7 @@ The preceding steps set up triad chords. Throw these at your chords for more fla
 | ------------- | ------------- | ------------- |
 | 7th Note  | 7  | The 7th note of your scale is the life of your party! ***7th note will be added to a triad...*** which will make it a quad now I guess.|
 | Suspended 2nd Note  | S2  | The 2nd note of your scale feels sad it wasn't invited to the jam as a *before*thought.  ***Suspended 2nd will replace the 3rd note of the original triad. *** |
-| Suspended 4th Note  | S4  | The 4th note of your scale was invited because your *perfect* bestie couldn't make it.  ***Suspended 4th will replace the 5th note of the original triad. *** |
+| Suspended 4th Note  | S4  | The 4th note of your scale was only invited because the 2nd note and 3rd note couldn't make it.  ***Suspended 4th will replace the 3rd note of the original triad. *** |
 | Added or Extended Note | A{d}| Who doesn't like party crashers? You'll never know what to expect with them around!  ***Adds a note (presumably one octave higher than the root), to the chord. *** |
 | Slash or Inversion | /{c} | The guest that steals your thunder... can't blame them for being so *bass*.  ***Adds a bass note to the front of the chord. May move a third or a fifth instead. *** |
 
@@ -174,14 +173,33 @@ The preceding steps set up triad chords. Throw these at your chords for more fla
 !["Without my morning coffee I'm just like a dried up piece of roast goat!" - Johann Sebastian Bach (quote from AZQuotes)](readme-images/bach-0.jpg)
 
 > [!CAUTION]  
->  ORDER MATTERS. Rearranging these will alter the expected output. Refer to the top of section [Input Chord Name syntax](#section-syntax) for the syntax.
+>  ORDER MATTERS. Rearranging these will alter the expected output. Refer to the top of section [Input Chord Name Syntax](#section-syntax) for the syntax.
 
-## Contributing
+## Expected Outputs :musical_keyboard:
+Here are some samples of the expected output from certain inputs.
+| Input  | Output | Description |
+| E | E-G#-B | E major triad
+| ES2 | E-F#-B | E suspended 2nd chord
+| ES4 | E-A-B | E suspended 4th chord
+| E+ | E-G#-C | E augmented chord
+| EO | E-G#-Bb | E diminished chord
+| E0 | E-G-Bb-D | E half-diminished chord
+| Em | E-G-B | E minor triad
+| Em7 | E-G-B-D | E minor 7th chord
+| EmA9 | E-G-B-D-F# | E minor 9th chord
+| EmA13 | E-G-B-D-C | E minor 13th chord
+| Em/G | G(bass)-E-D | E minor 1st inversion
+| Em/B | B(bass)-E-G | E minor 2nd inversion
+
+## Contributing :handshake:
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
-## License
+## License :call_me_hand:
 
 [GPL](https://choosealicense.com/licenses/GPL/)
+
+## Credits :star2:
+Project and project description Copyright (c) 2025 by TonyOM. All rights reserved.

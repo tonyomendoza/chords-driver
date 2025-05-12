@@ -195,39 +195,26 @@ static ssize_t my_read(struct file *f, char __user *u, size_t l, loff_t *o)
     // Calculate if has sus2 or sus4
     int hasSus2 = 0;
     int hasSus4 = 0;
-    int limit = 0;
-    while(limit < 2){
-        if(kernel_buffer[tracker] == 'S'){
+    
+    if(kernel_buffer[tracker] == 'S'){
+        tracker++;
+        if(kernel_buffer[tracker] == '2'){
+            strcpy(third, getNote(noteIndex, 1)); // 2 - 1
+            hasSus2 = 1;
             tracker++;
-            if(kernel_buffer[tracker] == '2'){
-                if(hasSus2){
-                    printk("CHORDS: Extra Sus2 provided. :C\n");
-                    return -EINVAL;
-                }
-                strcpy(third, getNote(noteIndex, 1)); // 2 - 1
-                hasSus2 = 1;
-                tracker++;
-            }
-            else if(kernel_buffer[tracker] == '4'){
-                if(hasSus4){
-                    printk("CHORDS: Extra Sus4 provided. :C\n");
-                    return -EINVAL;
-                }
-                strcpy(fifth, getNote(noteIndex, 3)); // 4 - 1
-                hasSus4 = 1;
-                tracker++;
-            }
-            else 
-            {
-                printk("CHORDS: Invalid format for suspended chord. :C\n");
-                return -EINVAL;
-            }
+            printk("CHORDS: Chord has a 2nd suspended note %s", third);
         }
-        limit++;
-    }
-
-    if(hasSus2){
-        printk("CHORDS: Chord has a 2nd suspended note %s", third);
+        else if(kernel_buffer[tracker] == '4'){
+            strcpy(third, getNote(noteIndex, 3)); // 4 - 1
+            hasSus4 = 1;
+            tracker++;
+            printk("CHORDS: Chord has a 4th Suspended note %s", third);
+        }
+        else 
+        {
+            printk("CHORDS: Invalid format for suspended chord. :C\n");
+            return -EINVAL;
+        }
     }
     else {
         switch(mode){
@@ -241,23 +228,19 @@ static ssize_t my_read(struct file *f, char __user *u, size_t l, loff_t *o)
             break;
         }
     }
-    if(hasSus4){
-        printk("CHORDS: Chord has a 4th Suspended note %s", fifth);
-    }
-    else {
-        switch(mode){
-            case '+':
-                printk("CHORDS: Chord has an Augmented 5th note %s", fifth);
-            break;
-            case 'O':
-                printk("CHORDS: Chord has a Diminished 5th note %s", fifth);
-            break;
-            case '0':
-            break;
-            default:
-                printk("CHORDS: Chord has a Perfect 5th note %s", fifth);
-            break;
-        }
+
+    switch(mode){
+        case '+':
+            printk("CHORDS: Chord has an Augmented 5th note %s", fifth);
+        break;
+        case 'O':
+            printk("CHORDS: Chord has a Diminished 5th note %s", fifth);
+        break;
+        case '0':
+        break;
+        default:
+            printk("CHORDS: Chord has a Perfect 5th note %s", fifth);
+        break;
     }
 
     // Calculate if has add
