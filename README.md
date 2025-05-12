@@ -95,7 +95,7 @@ In the example, we write:
 ```code
 char *s = "Em7S2A11/B";
 ```
-This string represents the chord E minor 7 sus 2 sus 4 add 11 / B
+This string represents the chord E minor 7 sus 2 add 11 / B
 The goal of this device driver is to allow anyone to simply type their chord name in the application to recieve a string value.
 The syntax to create your own chords is as follows:
 
@@ -115,6 +115,9 @@ Below is how you would convert a human readable chord into a CHORDS-readable cho
 
 > [!IMPORTANT]  
 >  The only required symbol is the ***Note*** symbol. Every other symbol may be added or removed from your chord as needed.
+
+> [!CAUTION]  
+>  ORDER MATTERS. Rearranging these will alter the expected output. Refer to the top of section [Input Chord Name Syntax](#section-syntax) for the syntax.
 
 ### <a name="section-syntax-notes"></a> Notes :musical_note:
 There are 12 possible note symbols.
@@ -172,24 +175,24 @@ The preceding steps set up triad chords. Throw these at your chords for more fla
 
 !["Without my morning coffee I'm just like a dried up piece of roast goat!" - Johann Sebastian Bach (quote from AZQuotes)](readme-images/bach-0.jpg)
 
-> [!CAUTION]  
->  ORDER MATTERS. Rearranging these will alter the expected output. Refer to the top of section [Input Chord Name Syntax](#section-syntax) for the syntax.
-
 ## Expected Outputs :musical_keyboard:
 Here are some samples of the expected output from certain inputs.
 | Input  | Output | Description |
-| E | E-G#-B | E major triad
-| ES2 | E-F#-B | E suspended 2nd chord
-| ES4 | E-A-B | E suspended 4th chord
-| E+ | E-G#-C | E augmented chord
-| EO | E-G#-Bb | E diminished chord
-| E0 | E-G-Bb-D | E half-diminished chord
-| Em | E-G-B | E minor triad
-| Em7 | E-G-B-D | E minor 7th chord
-| EmA9 | E-G-B-D-F# | E minor 9th chord
-| EmA13 | E-G-B-D-C | E minor 13th chord
-| Em/G | G(bass)-E-D | E minor 1st inversion
-| Em/B | B(bass)-E-G | E minor 2nd inversion
+| E | E-G#-B | E major triad |
+| ES2 | E-F#-B | E suspended 2nd chord |
+| ES4 | E-A-B | E suspended 4th chord |
+| E+ | E-G#-C | E augmented chord |
+| EO | E-G#-Bb | E diminished chord |
+| E0 | E-G-Bb-D | E half-diminished chord |
+| Em | E-G-B | E minor triad |
+| Em7 | E-G-B-D | E minor 7th chord |
+| EmA9 | E-G-B-D-F# | E minor 9th chord |
+| EmA13 | E-G-B-D-C | E minor 13th chord |
+| Em/G | G(bass)-E-D | E minor 1st inversion |
+| Em/B | B(bass)-E-G | E minor 2nd inversion |
+
+### Notes on excluded symbols
+Certain symbols, like *6*, is omitted because *A6* functions the same.
 
 ## Contributing :handshake:
 
