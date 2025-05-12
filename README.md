@@ -178,6 +178,7 @@ The preceding steps set up triad chords. Throw these at your chords for more fla
 ## Expected Outputs :musical_keyboard:
 Here are some samples of the expected output from certain inputs.
 | Input  | Output | Description |
+| ------------- | ------------- | ------------- |
 | E | E-G#-B | E major triad |
 | ES2 | E-F#-B | E suspended 2nd chord |
 | ES4 | E-A-B | E suspended 4th chord |
