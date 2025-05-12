@@ -83,7 +83,7 @@ Read from the file to retrieve the chord spelling from the device driver.
 ```
 
 ### Close :file_folder:
-Nobody likes untidy processes. Close our the file when you are done.
+Nobody likes untidy processes. Close the file when you are done.
 ```code
 close(fd);
 return 0;
@@ -165,13 +165,13 @@ The preceding steps set up triad chords. Throw these at your chords for more fla
 | Suspended 2nd Note  | S2  | The 2nd note of your scale feels sad it wasn't invited to the jam as a *before*thought.  ***Suspended 2nd will replace the 3rd note of the original triad.*** |
 | Suspended 4th Note  | S4  | The 4th note of your scale was only invited because the 2nd note and 3rd note couldn't make it.  ***Suspended 4th will replace the 3rd note of the original triad.*** |
 | Added or Extended Note | A{d}| Who doesn't like party crashers? You'll never know what to expect with them around!  ***Adds a note (presumably one octave higher than the root), to the chord.*** |
-| Slash or Inversion | /{c} | The guest that steals your thunder... can't blame them for being so *bass*.  ***Adds a bass note to the front of the chord. May move a third or a fifth instead.*** |
+| Slash or Inversion | /{c} | The guest that steals your thunder... can't blame them for being so *bass*.  ***Adds a bass note to the front of the chord. May move a 3rd note or a 5th note instead.*** |
 
 > [!NOTE]  
-> {c} represents any character as long as it is  Refer to the top of section [Notes](#section-syntax-notes) for the list of note symbols.
+> {c} represents any character as long as it is  Refer to the top of section [Notes](#section-syntax-notes) for the list of Note symbols.
 
 > [!NOTE]  
-> {d} represents a single or two-digit number. This means the chord name contain *A9* or *A13*. Sure you can technically create a ***EmA99*** chord in this system, but WWBJSD?
+> {d} represents a single or two-digit number. This means the chord name could contain *A9* or *A13*. Sure you can technically create a ***EmA99*** chord in this system, but WWBJSD?
 
 !["Without my morning coffee I'm just like a dried up piece of roast goat!" - Johann Sebastian Bach (quote from AZQuotes)](readme-images/bach-0.jpg)
 
@@ -183,14 +183,14 @@ Here are some samples of the expected output from certain inputs.
 | ES2 | E-F#-B | E suspended 2nd chord |
 | ES4 | E-A-B | E suspended 4th chord |
 | E+ | E-G#-C | E augmented chord |
-| EO | E-G#-Bb | E diminished chord |
-| E0 | E-G-Bb-D | E half-diminished chord |
+| EO | E-G#-A# | E diminished chord. A# would normally be Bb |
+| E0 | E-G-A#-D | E half-diminished chord. A# would normally be Bb |
 | Em | E-G-B | E minor triad |
 | Em7 | E-G-B-D | E minor 7th chord |
 | EmA9 | E-G-B-D-F# | E minor 9th chord |
 | EmA13 | E-G-B-D-C | E minor 13th chord |
-| Em/G | G(bass)-E-D | E minor 1st inversion |
-| Em/B | B(bass)-E-G | E minor 2nd inversion |
+| Em/G | G (bass)-E-D | E minor 1st inversion |
+| Em/B | B (bass)-E-G | E minor 2nd inversion |
 
 ### Notes on excluded symbols
 Certain symbols, like *6*, is omitted because *A6* functions the same.
