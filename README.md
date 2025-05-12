@@ -89,7 +89,7 @@ close(fd);
 return 0;
 ```
 
-##<a name="section-syntax"></a> Input Chord Name Syntax :notes:
+## <a name="section-syntax"></a> Input Chord Name Syntax :notes:
 
 In the example, we write:
 ```code
@@ -159,10 +159,10 @@ The preceding steps set up triad chords. Throw these at your chords for more fla
 | Extra Notes  | SYNTAX SYMBOLS | Description |
 | ------------- | ------------- | ------------- |
 | 7th Note  | 7  | The 7th note of your scale is the life of your party! ***7th note will be added to a triad...*** which will make it a quad now I guess.|
-| Suspended 2nd Note  | S2  | The 2nd note of your scale feels sad it wasn't invited to the jam as a *before*thought.  ***Suspended 2nd will replace the 3rd note of the original triad. *** |
-| Suspended 4th Note  | S4  | The 4th note of your scale was only invited because the 2nd note and 3rd note couldn't make it.  ***Suspended 4th will replace the 3rd note of the original triad. *** |
-| Added or Extended Note | A{d}| Who doesn't like party crashers? You'll never know what to expect with them around!  ***Adds a note (presumably one octave higher than the root), to the chord. *** |
-| Slash or Inversion | /{c} | The guest that steals your thunder... can't blame them for being so *bass*.  ***Adds a bass note to the front of the chord. May move a third or a fifth instead. *** |
+| Suspended 2nd Note  | S2  | The 2nd note of your scale feels sad it wasn't invited to the jam as a *before*thought.  ***Suspended 2nd will replace the 3rd note of the original triad.*** |
+| Suspended 4th Note  | S4  | The 4th note of your scale was only invited because the 2nd note and 3rd note couldn't make it.  ***Suspended 4th will replace the 3rd note of the original triad.*** |
+| Added or Extended Note | A{d}| Who doesn't like party crashers? You'll never know what to expect with them around!  ***Adds a note (presumably one octave higher than the root), to the chord.*** |
+| Slash or Inversion | /{c} | The guest that steals your thunder... can't blame them for being so *bass*.  ***Adds a bass note to the front of the chord. May move a third or a fifth instead.*** |
 
 > [!NOTE]  
 > {c} represents any character as long as it is  Refer to the top of section [Notes](#section-syntax-notes) for the list of note symbols.
